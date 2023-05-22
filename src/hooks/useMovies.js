@@ -39,7 +39,7 @@ export default function useMovies() {
   const fetchMovies = async () => {
     try {
       dispatch({ type: "pending" });
-      const response = await axios.get('/movie/popular');
+      const response = await axios.get('/trending/all/day');
       const movies =  response.data.results;
       dispatch({ type: "success", payload: { movies: movies } });
     } catch (err) {
