@@ -6,11 +6,11 @@ import OverviewPage from "./pages/OverviewPage"
 import useApp from "./hooks/useMovies"
 
 function App() {
-  const {movies, loading} = useApp()
+  const {movies, loading, details, detailIsLoading} = useApp()
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home {...{movies, loading}}/>
+      element: <Home {...{movies, loading,}}/>
     }, 
     {
       path: "/movies",
@@ -21,8 +21,8 @@ function App() {
       element: <SeriesPage/>
     }, 
     {
-      path: "overview/:id",
-      element: <OverviewPage/>
+      path: "overview/:mediaType/:id",
+      element: <OverviewPage {...{detailIsLoading, details,}}/>
     }
   ])
   return (
