@@ -9,7 +9,7 @@ const Home = ({movies, loading}) => {
     <div>
       <NavBar/>
       <section className='container mx-auto mt-10'>
-        <h2>Trending</h2>
+        <h2>Trending now</h2>
         {loading ? "Fetching..." : <MovieCard movies={movies}/>}
       </section>
     </div>
