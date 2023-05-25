@@ -5,7 +5,7 @@ import axios from "../constants/index";
 
 
 const initialState = {
-  details: [],
+  details: {},
   detailIsLoading: false,
   status: "idle",
   error: null,
@@ -40,23 +40,22 @@ export default function useDetailsOverview() {
     const [state, dispatch] = useReducer(reducer, initialState);
  
 
-    const fetchOverviewDetails = async () => {
+    const fetchOverviewDetails = async (movie_id, media_type) => {
         try {
             dispatch({type: 'pending'});
             const response = await axios.get(`/${media_type}/${movie_id}`)
-            const data = response.data.results;
+            const data = response.data;
+            console.log(data)
             dispatch({type: "success", payload: {details: data}});
         }catch(err) {
             dispatch({type: "failed", payload: {error: err.message}});
             console.log(err.message)
         }
     };
-    useEffect(() => {
-      fetchOverviewDetails()
-    }, [])
+  
 
     return {
         ...state,
-        reload: () => fetchOverviewDetails()
+        reload:  fetchOverviewDetails
     }
 }

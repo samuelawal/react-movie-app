@@ -7,12 +7,16 @@ import React, { useEffect, useMemo, useReducer } from "react";
 export default function useApp() {
   const [state, dispatch] = useReducer(AppReducer, APP_INITIAL_STATE);
   const { movies, error: moviesError, status: moviesStatus, loading } = useMovies();
-  useMemo(() => {
+ 
       useEffect(() => {
         dispatch({ type: SET_MOVIES, movies: movies });
       }, [movies]);
-  }, [])
-  const {details, error: detailsError, status: detailsStatus} = useDetailsOverview()
+
+  const {details, error: detailsError, status: detailsStatus, reload: handleFetchDetailsOverview} = useDetailsOverview()
+  const handleSetSelectedMovieType =
+    (selectedId, selectedType) => { 
+      dispatch({type: SET_SELECTED_MOVIE_TYPE, movieType: selectedType, movieId: selectedId})
+    }
 
   return {
     ...state,
@@ -21,9 +25,11 @@ export default function useApp() {
     isdetailsLoading: detailsStatus === 'fetching',
     moviesError,
     handleSetSelectedMovieType,
+    handleFetchDetailsOverview,
     loading,
     isMoviesLoading: movies.length < 1 && moviesStatus === "fetching",
   };
 };
+
 
 

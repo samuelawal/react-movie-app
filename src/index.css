@@ -51,9 +51,13 @@ body {
     background-color: var(--secondary-color);
     border-radius: 5px;
   }
-  .movie_card{
+  /* .movie_card{
     width: 211px;
     background-color: red;
     margin: 5px;
    height: 180px;
-  }
+  } */
+ .movie_title{
+  font-size: 3.5rem;
+  font-weight: 700;
+ }

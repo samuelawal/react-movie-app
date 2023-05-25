@@ -3,10 +3,11 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import MoviesPage from "./pages/MoviesPage"
 import SeriesPage from "./pages/SeriesPage"
 import OverviewPage from "./pages/OverviewPage"
-import useApp from "./hooks/useMovies"
+import useApp from "./hooks/useApp"
+import axios from './constants/index'
 
 function App() {
-  const {movies, loading, details, detailIsLoading} = useApp()
+  const {movies, loading, details, detailIsLoading, handleFetchDetailsOverview, handleSetSelectedMovieType} = useApp()
   const router = createBrowserRouter([
     {
       path: "/",
@@ -21,8 +22,8 @@ function App() {
       element: <SeriesPage/>
     }, 
     {
-      path: "overview/:mediaType/:id",
-      element: <OverviewPage {...{detailIsLoading, details,}}/>
+      path: "/overview/:mediaType/:id",
+      element: <OverviewPage {...{ handleSetSelectedMovieType, handleFetchDetailsOverview, details}}/>,
     }
   ])
   return (
@@ -32,3 +33,6 @@ function App() {
   )
 }
 export default App
+
+
+// axios.get(`${params.id}${params.mediaType}`)
