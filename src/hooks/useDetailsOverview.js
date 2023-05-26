@@ -2,8 +2,6 @@ import { useEffect, useReducer } from "react";
 import { SET_DETAIL_OVERVIEW } from "../constants";
 import axios from "../constants/index";
 
-
-
 const initialState = {
   details: {},
   detailIsLoading: false,
@@ -37,25 +35,22 @@ function reducer(state, action) {
   }
 }
 export default function useDetailsOverview() {
-    const [state, dispatch] = useReducer(reducer, initialState);
- 
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    const fetchOverviewDetails = async (movie_id, media_type) => {
-        try {
-            dispatch({type: 'pending'});
-            const response = await axios.get(`/${media_type}/${movie_id}`)
-            const data = response.data;
-            console.log(data)
-            dispatch({type: "success", payload: {details: data}});
-        }catch(err) {
-            dispatch({type: "failed", payload: {error: err.message}});
-            console.log(err.message)
-        }
-    };
-  
-
-    return {
-        ...state,
-        reload:  fetchOverviewDetails
+  const fetchOverviewDetails = async (movie_id, media_type) => {
+    try {
+      dispatch({ type: "pending" });
+      const response = await axios.get(`/${media_type}/${movie_id}`);
+      const data = response.data;
+      dispatch({ type: "success", payload: { details: data } });
+    } catch (err) {
+      dispatch({ type: "failed", payload: { error: err.message } });
+      console.log(err.message);
     }
+  };
+
+  return {
+    ...state,
+    reload: fetchOverviewDetails,
+  };
 }
