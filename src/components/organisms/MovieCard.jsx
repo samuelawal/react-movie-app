@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const MovieCard = ({ movies }) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+    
       {movies.map((movie, idx) => {
         return (
           <Link to={`/overview/${movie.media_type}/${movie.id}`} key={idx}>
@@ -14,11 +15,11 @@ const MovieCard = ({ movies }) => {
                 width='100%'
               />
               <p>{!movie.title ? movie.name : movie.title}</p>
-
             </div>
           </Link>
         );
       })}
+
     </div>
   );
 };

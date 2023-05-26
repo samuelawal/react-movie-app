@@ -11,7 +11,7 @@ function App() {
     movies,
     isSeriesLoading,
     details,
-    detailIsLoading,
+    isdetailsLoading,
     handleFetchDetailsOverview,
     handleSetSelectedMovieType,
     fetchTvShows,
@@ -41,6 +41,7 @@ function App() {
             handleSetSelectedMovieType,
             handleFetchDetailsOverview,
             details,
+            isdetailsLoading,
           }}
         />
       ),

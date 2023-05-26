@@ -3,7 +3,9 @@ import NavBar from "../components/organisms/NavBar";
 
 import MovieCard from "../components/organisms/MovieCard";
 
+
 const Home = ({ movies, isMoviesLoading,  }) => {
+
   return (
     <div>
       <NavBar />

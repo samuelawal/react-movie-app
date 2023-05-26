@@ -61,6 +61,16 @@ body {
   line-height: 1.1;
   font-weight: 700;
  }
+ .more_info_title {
+  color: var(--primary-color);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+ }
+ .more_info_title_contiainer {
+  position: relative;
+  top: 50%;
+ }
  .details_overview{
   position: relative;
   top: 10%;
