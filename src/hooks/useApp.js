@@ -2,11 +2,13 @@ import { SET_MOVIES, SET_SELECTED_MOVIE_TYPE } from "../constants";
 import AppReducer, { APP_INITIAL_STATE } from "../reducers/reducers";
 import useDetailsOverview from "./useDetailsOverview";
 import useMovies from "./useMovies";
+import useSeries from './useSeries'
 import React, { useEffect, useMemo, useReducer } from "react";
 
 export default function useApp() {
   const [state, dispatch] = useReducer(AppReducer, APP_INITIAL_STATE);
   const { movies, error: moviesError, status: moviesStatus, loading } = useMovies();
+  const { series, error: seriesError, status: seriesStatus, reload: fetchTvShows} = useSeries();
  
       useEffect(() => {
         dispatch({ type: SET_MOVIES, movies: movies });
@@ -23,8 +25,13 @@ export default function useApp() {
     details,
     detailsError,
     isdetailsLoading: detailsStatus === 'fetching',
+    isSeriesLoading: seriesStatus === "fetching",
     moviesError,
+    seriesError,
+    series,
+    isStatusLoading: seriesStatus === 'fetching',
     handleSetSelectedMovieType,
+    fetchTvShows,
     handleFetchDetailsOverview,
     loading,
     isMoviesLoading: movies.length < 1 && moviesStatus === "fetching",

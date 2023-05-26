@@ -13,7 +13,8 @@ const MovieCard = ({ movies }) => {
                 className='media_img object-none object-bottom'
                 width='100%'
               />
-              <p>{movie.title}</p>
+              <p>{!movie.title ? movie.name : movie.title}</p>
+
             </div>
           </Link>
         );

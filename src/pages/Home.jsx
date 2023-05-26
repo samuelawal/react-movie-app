@@ -3,13 +3,13 @@ import NavBar from "../components/organisms/NavBar";
 
 import MovieCard from "../components/organisms/MovieCard";
 
-const Home = ({ movies, loading,  }) => {
+const Home = ({ movies, isMoviesLoading,  }) => {
   return (
     <div>
       <NavBar />
       <section className='container mx-auto mt-10'>
         <h2>Trending now</h2>
-        {loading ? "Fetching..." : <MovieCard movies={movies} />}
+        {isMoviesLoading ? "Fetching..." : <MovieCard movies={movies} />}
       </section>
     </div>
   );

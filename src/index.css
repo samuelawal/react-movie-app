@@ -28,6 +28,10 @@ body {
   object-fit: cover; 
   cursor: pointer;
 }
+.myBtn {
+  min-block-size: 45px;
+  min-inline-size: 120px;
+}
 
 
  /* Links */
@@ -51,13 +55,13 @@ body {
     background-color: var(--secondary-color);
     border-radius: 5px;
   }
-  /* .movie_card{
-    width: 211px;
-    background-color: red;
-    margin: 5px;
-   height: 180px;
-  } */
+
  .movie_title{
   font-size: 3.5rem;
+  line-height: 1.1;
   font-weight: 700;
+ }
+ .details_overview{
+  position: relative;
+  top: 10%;
  }
