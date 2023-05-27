@@ -55,6 +55,9 @@ body {
     background-color: var(--secondary-color);
     border-radius: 5px;
   }
+  button:hover{
+    opacity: .9;
+  }
 
  .movie_title{
   font-size: 3.5rem;

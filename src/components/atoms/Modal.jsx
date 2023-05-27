@@ -1,4 +1,5 @@
 import { IMG_PATH } from "../../constants";
+import { FaPlay } from 'react-icons/fa'
 const Modal = ({ isOpen, onClose, movie_title, children, poster_path }) => {
   return (
     <>
@@ -17,26 +18,20 @@ const Modal = ({ isOpen, onClose, movie_title, children, poster_path }) => {
             >
               <div className='p-5  more_info_title_contiainer '>
                 <h1 className='more_info_title'>{movie_title}</h1>
+                <div className="mt-5">
+                <button className="myBtn">Play</button>
+
+                </div>
               </div>
             </div>
             {children}
-            {/* <button
+            <button
                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                 onClick={onClose}
               >
                 Close
-              </button> */}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatum, eius rem iusto voluptatem qui neque harum, eveniet earum
-            illo cupiditate, officia voluptatibus! Odio error esse magni
-            accusantium aperiam laboriosam vel, ad voluptates in delectus dolor
-            expedita nulla rem, nemo placeat, perspiciatis non ipsum magnam?
-            Dolores ab quo esse aperiam, amet eveniet. Doloribus in aspernatur
-            ex at ducimus, odio accusamus dolores error nisi labore consectetur
-            repellat soluta modi, maxime necessitatibus inventore sequi fuga
-            cupiditate eius. Eos ipsa accusamus a consectetur ea, amet tempore
-            praesentium nobis corporis ad labore eaque quidem soluta nam,
-            delectus consequatur sint rem sed fuga et quibusdam. Necessitatibus.
+              </button>
+          
           </div>
         </div>
       )}
