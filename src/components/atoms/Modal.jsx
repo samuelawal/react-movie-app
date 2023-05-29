@@ -1,6 +1,18 @@
 import { IMG_PATH } from "../../constants";
-import { FaPlay } from 'react-icons/fa'
-const Modal = ({ isOpen, onClose, movie_title, children, poster_path }) => {
+import { FaPlay } from "react-icons/fa";
+import { getMovieFullYear } from "../../utils";
+const Modal = ({
+  isOpen,
+  onClose,
+  movie_title,
+  children,
+  detail_type,
+  genres,
+  overview,
+  poster_path,
+  number_of_episodes,
+  first_air_date,
+}) => {
   return (
     <>
       {isOpen && (
@@ -18,20 +30,45 @@ const Modal = ({ isOpen, onClose, movie_title, children, poster_path }) => {
             >
               <div className='p-5  more_info_title_contiainer '>
                 <h1 className='more_info_title'>{movie_title}</h1>
-                <div className="mt-5">
-                <button className="myBtn">Play</button>
-
+                <div className='mt-5'>
+                  <button className='myBtn'>Play</button>
                 </div>
               </div>
             </div>
             {children}
+            <div className='container p-5'>
+              <div className='grid grid-cols-3 gap-6'>
+                <div className="col-span-2">
+                <div className='flex'>
+                  <p className='text-green-500 small mr-2'>80% match</p>
+                  <p className='small text-gray-400'>
+                    {getMovieFullYear(first_air_date)}, {number_of_episodes}{" "}
+                    episodes .
+                  </p> 
+                </div>
+                <p className="small mt-3 leading-loose">
+                    {overview}
+                  </p>
+                </div>               
+                <div>
+                  <p className='small text-gray-400 '>
+                    Genres:
+                     {genres.map((movie_genre) => (
+                      <span className="text-white ml-1" key={movie_genre.id}>{movie_genre.name},</span>
+                    ))}
+                  </p>
+                  <p className="small text-gray-400">
+                      This show is:<span className="text-white ml-1">{detail_type}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
             <button
-                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                onClick={onClose}
-              >
-                Close
-              </button>
-          
+              className='mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600'
+              onClick={onClose}
+            >
+              Close
+            </button>
           </div>
         </div>
       )}

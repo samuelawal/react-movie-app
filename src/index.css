@@ -55,6 +55,9 @@ body {
     background-color: var(--secondary-color);
     border-radius: 5px;
   }
+  .small {
+    font-size: .75rem;
+  }
   button:hover{
     opacity: .9;
   }

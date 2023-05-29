@@ -4,6 +4,7 @@ import NavBar from "../components/organisms/NavBar";
 import Modal from "../components/atoms/Modal";
 import { IMG_PATH } from "../constants";
 
+
 const OverviewPage = ({
   isdetailsLoading,
   handleFetchDetailsOverview,
@@ -11,7 +12,7 @@ const OverviewPage = ({
 }) => {
   const { id, mediaType } = useParams();
   const [modalOpen, setModalOpen] = useState(false);
-
+  console.log(details)
   const openModal = () => {
     setModalOpen(true);
   };
@@ -25,19 +26,21 @@ const OverviewPage = ({
     };
     fetchDetails();
   }, [id, mediaType]);
-  console.log(details);
+
   return (
     <section>
       <Modal
         isOpen={modalOpen}
         onClose={closeModal}
+        overview={details.overview}
+        genres={details.genres}
+        first_air_date={!details.first_air_date ? details.release_date : details.first_air_date}
+        number_of_epsiodes={details.number_of_episodes}
         poster_path={details.poster_path}
+        detail_type={details.type}
         movie_title={!details.title ? details.original_name : details.title}
       >
-        <h1 className='text-2xl font-bold'>Modal Content</h1>
-        <p className='mt-2'>
-          This is a modal example using Tailwind CSS and React.
-        </p>
+
       </Modal>
       {isdetailsLoading ? (
         "Loading..."
