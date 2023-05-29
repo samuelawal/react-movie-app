@@ -51,6 +51,10 @@ body {
   color: var(--secondary-color);
   font-weight: 700px;
  }
+ .h1{
+  font-weight: 800;
+  font-size: 1.5rem;
+ }
  button, .button{
     background-color: var(--secondary-color);
     border-radius: 5px;

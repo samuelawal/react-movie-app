@@ -31,14 +31,16 @@ const OverviewPage = ({
     <section>
       <Modal
         isOpen={modalOpen}
+        isdetailsLoading={isdetailsLoading}
         onClose={closeModal}
         overview={details.overview}
         genres={details.genres}
-        first_air_date={!details.first_air_date ? details.release_date : details.first_air_date}
+        first_air_date={!details.air_date ? details.year_of_release : details.air_date}
         number_of_epsiodes={details.number_of_episodes}
-        poster_path={details.poster_path}
+        poster_path={details.poster}
+        casts={details.casts}
         detail_type={details.type}
-        movie_title={!details.title ? details.original_name : details.title}
+        movie_title={!details.title ? details.name : details.title}
       >
 
       </Modal>
@@ -49,7 +51,7 @@ const OverviewPage = ({
           className='w-full h-screen bg-cover bg-no-repeat'
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(${
-              IMG_PATH + details.poster_path
+              details.poster
             })`,
             backgroundPosition: "50% 30%",
           }}
@@ -58,7 +60,7 @@ const OverviewPage = ({
           <div className='details_overview container mx-auto'>
             <div className='md:w-2/4 lg:w-2/4 w-4/4'>
               <h1 className='movie_title'>
-                {!details.title ? details.original_name : details.title}
+                {!details.title ? details.name : details.title}
               </h1>
               <p className='text-slate-400 mt-5'>{details.overview}</p>
               <div className=''>
