@@ -1,12 +1,14 @@
 import { IMG_PATH } from "../../constants";
 import { FaPlay } from "react-icons/fa";
 import { getMovieFullYear } from "../../utils";
+import MovieCard from "../organisms/MovieCard";
 const Modal = ({
   isOpen,
   onClose,
   movie_title,
   children,
   detail_type,
+  recommendations,
   isdetailsLoading,
   genres,
   overview,
@@ -50,9 +52,9 @@ if (casts && casts.length > 5) {
                       episodes .
                     </p>
                   </div>
-                  <p className='small mt-3 leading-loose'>{overview}</p>
+                  <p className='small mt-3 leading-loose'>{overview}.</p>
                 </div>
-                <div>
+                <div className='col-span-1 break-words'>
                   <p className='small text-gray-400 '>
                     Genres:
                     {genres.map((movie_genre) => (
@@ -62,7 +64,7 @@ if (casts && casts.length > 5) {
                     ))}
                   </p>
                   <p className='small text-gray-400 mt-3'>
-                    Casts:{" "}
+                    Casts:
                     <span className='text-white small ml-1' key={casts.id}>
                       {castsToShow ? castsToShow.map((cast) => cast.name).join(", ") : 'Loading..'}
                     </span>
@@ -71,6 +73,9 @@ if (casts && casts.length > 5) {
               </div>
               <div className="mt-5 pt-5">
               <h3 className="h1">More Like this</h3>
+              <div className="mt-5">
+              <MovieCard movies={recommendations}/>
+              </div>
               </div>
             </div>
             <button

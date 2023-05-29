@@ -34,6 +34,7 @@ const OverviewPage = ({
         isdetailsLoading={isdetailsLoading}
         onClose={closeModal}
         overview={details.overview}
+        recommendations={details.recommendations}
         genres={details.genres}
         first_air_date={!details.air_date ? details.year_of_release : details.air_date}
         number_of_epsiodes={details.number_of_episodes}
