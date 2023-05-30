@@ -12,7 +12,7 @@ const OverviewPage = ({
 }) => {
   const { id, mediaType } = useParams();
   const [modalOpen, setModalOpen] = useState(false);
-  console.log(details)
+ 
   const openModal = () => {
     setModalOpen(true);
   };
@@ -40,6 +40,7 @@ const OverviewPage = ({
         number_of_epsiodes={details.number_of_episodes}
         poster_path={details.poster}
         casts={details.casts}
+        ratings={details.ratings}
         detail_type={details.type}
         movie_title={!details.title ? details.name : details.title}
       >

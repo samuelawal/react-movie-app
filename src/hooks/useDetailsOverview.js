@@ -56,10 +56,12 @@ export default function useDetailsOverview() {
           genres: movieOverview.data.genres,
           overview: movieOverview.data.overview,
           recommendations: movieRecommendations.data.results,
+          ratings: movieOverview.data.vote_average,
           poster: IMG_PATH + movieOverview.data.poster_path,
           backdrop: IMG_PATH + movieOverview.data.backdrop_path
         }
-       console.log(movieDetails)
+        // console.log(movieOverview.data)
+        // console.log(movieCasts.data)
         dispatch({ type: "success", payload: { details: movieDetails } });
       })
     } catch (err) {
