@@ -26,20 +26,23 @@ const Modal = ({
   if (recommendations && recommendations.length > 12) {
     filteredRecommendations = recommendations.slice(0, 12);
   }
-  const rounded_rating = Number(ratings).toFixed(1) 
+  const rounded_rating = Number(ratings).toFixed(1);
   let ratingColor;
   if (rounded_rating < 5) {
-      ratingColor = "text-red-500 ml-1";
-    } else if (rounded_rating < 7) {
-      ratingColor = "text-orange-500 ml-1";
-    } else {
-      ratingColor = "text-green-500 ml-1";
-    }
+    ratingColor = "text-red-500 ml-1";
+  } else if (rounded_rating < 7) {
+    ratingColor = "text-orange-500 ml-1";
+  } else {
+    ratingColor = "text-green-500 ml-1";
+  }
   return (
     <>
       {isOpen && !isdetailsLoading && (
         <div className='fixed inset-0 mt-10 z-20 flex  justify-center'>
-          <div className='fixed inset-0 bg-black opacity-75'  onClick={onClose}></div>
+          <div
+            className='fixed inset-0 bg-black opacity-75'
+            onClick={onClose}
+          ></div>
           <div className='bg-zinc-900 w-2/3  rounded-md shadow-md max-h-screen overflow-y-auto z-50'>
             <div
               className='w-full h-5/6'
@@ -82,7 +85,11 @@ const Modal = ({
                     <span className='text-white small ml-1' key={casts.id}>
                       {castsToShow
                         ? castsToShow.map((cast) => cast.name).join(", ")
-                        : "Loading.."}, <a href="#cast" className="movie_link">more</a>
+                        : "Loading.."}
+                      ,{" "}
+                      <a href='#cast' className='movie_link'>
+                        more
+                      </a>
                     </span>
                   </p>
                 </div>
@@ -91,36 +98,40 @@ const Modal = ({
                 <h3 className='h1'>More Like this</h3>
                 <div className='mt-5'>
                   {!recommendations ? (
-                    <p className='text-red-200 text-center'>No recommendations found</p>
+                    <p className='text-red-200 text-center'>
+                      No recommendations found
+                    </p>
                   ) : (
                     <MovieCard movies={filteredRecommendations} />
                   )}
                 </div>
               </div>
-              <div className="mt-5 pt-5" id="cast">
-                   <h3 className="h1">About {movie_title}</h3>
-                   <div className="mt-3">
-                   <p className='small text-gray-400 leading-relaxed'>
-                    Cast: <span className='text-white small ml-1' key={casts.id}>
+              <div className='mt-5 pt-5' id='cast'>
+                <h3 className='h1'>About {movie_title}</h3>
+                <div className='mt-3'>
+                  <p className='small text-gray-400 leading-relaxed'>
+                    Cast:{" "}
+                    <span className='text-white small ml-1' key={casts.id}>
                       {casts
                         ? casts.map((cast) => cast.name).join(" , ")
                         : "Loading.."}
                     </span>
-                   </p>
-                   <p className="small text-gray-400 mt-4">
-                    Genres: {genres.map((movie_genre) => (
+                  </p>
+                  <p className='small text-gray-400 mt-4'>
+                    Genres:{" "}
+                    {genres.map((movie_genre) => (
                       <span className='text-white ml-1' key={movie_genre.id}>
                         {movie_genre.name},
                       </span>
                     ))}
-                   </p>
-                   <p className="small text-gray-400 mt-4">
-                    Ratings: <span className={ratingColor}>{rounded_rating} / 10.</span>
-                   </p>
-                   </div>
+                  </p>
+                  <p className='small text-gray-400 mt-4'>
+                    Ratings:{" "}
+                    <span className={ratingColor}>{rounded_rating} / 10.</span>
+                  </p>
+                </div>
               </div>
             </div>
-                
           </div>
         </div>
       )}

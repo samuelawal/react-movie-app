@@ -28,11 +28,20 @@ body {
   object-fit: cover; 
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .media_element > img{
+    aspect-ratio: 4/3;
+  }
+}
 .myBtn {
   min-block-size: 45px;
   min-inline-size: 120px;
 }
-
+.search_input{
+  background: none;
+  border: 1px solid #fff
+  
+}
 
  /* Links */
  a {

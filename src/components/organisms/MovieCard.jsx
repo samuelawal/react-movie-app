@@ -7,14 +7,14 @@ const MovieCard = ({ movies }) => {
     
       {movies.map((movie, idx) => {
         return (
-          <Link to={`/overview/${movie.media_type}/${movie.id}`} key={idx}>
+          <Link to={`/overview/${movie.media_type}/${movie.id}`} key={idx} className="mb-4 md:mb-0">
             <div className='h-full w-full  media_element'>
               <img
                 src={IMG_PATH + movie.poster_path}
                 className='media_img object-none object-bottom'
                 width='100%'
               />
-              <p>{!movie.title ? movie.name : movie.title}</p>
+              <p className="md:text-left text-center">{!movie.title ? movie.name : movie.title}</p>
             </div>
           </Link>
         );
