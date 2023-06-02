@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({query, onInputChange}) => {
   const links = [
     { title: "Home", path: "/" },
     { title: "Series", path: "/series" },
@@ -25,7 +25,7 @@ const NavBar = () => {
           </ul>
      
         <div className="md:flex hidden justify-between items-center">
-          <input type="text" placeholder="Search..." class="text-small search_input px-3 mx-2 rounded py-1"/>
+          <input type="text" value={query} onChange={onInputChange} placeholder="Search..." className="text-small search_input px-3 mx-2 rounded py-1"/>
           <Link to='#' className="mx-2">Login</Link>
           <Link to='#' className="button px-3 py-2 mx-2">Signup</Link>
         </div>

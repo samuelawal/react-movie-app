@@ -58,7 +58,7 @@ const OverviewPage = ({
             backgroundPosition: "50% 30%",
           }}
         >
-          <NavBar />
+          {/* <NavBar /> */}
           <div className='details_overview container mx-auto'>
             <div className='md:w-2/4 lg:w-2/4 w-4/4'>
               <h1 className='movie_title'>

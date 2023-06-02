@@ -11,7 +11,7 @@ const SeriesPage = ({series, fetchTvShows, isSeriesLoading}) => {
 // },[])
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <section className='container mx-auto mt-10'>
         <h2>Trending TV shows right now</h2>
         {isSeriesLoading ? "Fetching..." : <MovieCard movies={series}/>}

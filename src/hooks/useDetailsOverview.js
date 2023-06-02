@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import {  useReducer } from "react";
 import { SET_DETAIL_OVERVIEW } from "../constants";
 import { IMG_PATH } from "../constants";
 import axios from "../constants/index";

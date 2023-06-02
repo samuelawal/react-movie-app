@@ -5,6 +5,8 @@ import SeriesPage from "./pages/SeriesPage";
 import OverviewPage from "./pages/OverviewPage";
 import useApp from "./hooks/useApp";
 import axios from "./constants/index";
+import SearchPage from "./pages/SearchPage";
+import RootLayout from "./pages/Root/Root";
 
 function App() {
   const {
@@ -19,33 +21,44 @@ function App() {
     isMoviesLoading,
   } = useApp();
   const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home {...{ movies, isMoviesLoading }} />,
-    },
-    {
-      path: "/movies",
-      element: <MoviesPage />,
-    },
-    {
-      path: "/series",
-      element: (
-        <SeriesPage {...{ series, fetchTvShows, isSeriesLoading }} />
-      ),
-    },
-    {
-      path: "/overview/:mediaType/:id",
-      element: (
-        <OverviewPage
-          {...{
-            handleSetSelectedMovieType,
-            handleFetchDetailsOverview,
-            details,
-            isdetailsLoading,
-          }}
-        />
-      ),
-    },
+   {
+    path: '/',
+    element: <RootLayout/>,
+    children: [
+      {
+        path: "",
+        index: true,
+        element: <Home {...{ movies, isMoviesLoading }} />,
+      },
+      {
+        path: "movies",
+        element: <MoviesPage />,
+      },
+      {
+        path: "search",
+        element: <SearchPage/>
+      },
+      {
+        path: "series",
+        element: (
+          <SeriesPage {...{ series, fetchTvShows, isSeriesLoading }} />
+        ),
+      },
+      {
+        path: "overview/:mediaType/:id",
+        element: (
+          <OverviewPage
+            {...{
+              handleSetSelectedMovieType,
+              handleFetchDetailsOverview,
+              details,
+              isdetailsLoading,
+            }}
+          />
+        ),
+      },
+    ],
+  },
   ]);
   return (
     <>
