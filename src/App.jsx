@@ -14,6 +14,9 @@ function App() {
     isSeriesLoading,
     details,
     isdetailsLoading,
+    isSearchingResult,
+    searchResults,
+    handleSearchResults,
     handleFetchDetailsOverview,
     handleSetSelectedMovieType,
     fetchTvShows,
@@ -36,7 +39,7 @@ function App() {
       },
       {
         path: "search",
-        element: <SearchPage/>
+        element: <SearchPage {...{handleSearchResults, searchResults, isSearchingResult}}/>
       },
       {
         path: "series",
