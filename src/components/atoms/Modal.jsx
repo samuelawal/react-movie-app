@@ -43,11 +43,11 @@ const Modal = ({
             className='fixed inset-0 bg-black opacity-75'
             onClick={onClose}
           ></div>
-          <div className='bg-zinc-900 w-2/3  rounded-md shadow-md max-h-screen overflow-y-auto z-50'>
+          <div className='bg-zinc-900 w-3/3 md:w-2/3 rounded-md shadow-md max-h-screen overflow-y-auto z-50'>
             <div
-              className='w-full h-5/6'
+              className='w-full h-4/6 md:h-5/6'
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.75)),url(${poster_path})`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),url(${poster_path})`,
                 backgroundPosition: "50% 30%",
               }}
             >
@@ -61,7 +61,7 @@ const Modal = ({
             {children}
             <div className='container p-5'>
               <div className='grid grid-cols-3 gap-6'>
-                <div className='col-span-2'>
+                <div className='col-span-3 md:col-span-2'>
                   <div className='flex'>
                     <p className='text-green-500 small mr-2'>80% match</p>
                     <p className='small text-gray-400'>
@@ -71,7 +71,7 @@ const Modal = ({
                   </div>
                   <p className='small mt-3 leading-loose'>{overview}.</p>
                 </div>
-                <div className='col-span-1 break-words'>
+                <div className='md:col-span-1 col-span-3 break-words'>
                   <p className='small text-gray-400 '>
                     Genres:
                     {genres.map((movie_genre) => (

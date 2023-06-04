@@ -60,7 +60,7 @@ const OverviewPage = ({
         >
           {/* <NavBar /> */}
           <div className='details_overview container mx-auto'>
-            <div className='md:w-2/4 lg:w-2/4 w-4/4'>
+            <div className='md:w-2/4 lg:w-2/4 w-4/4 m-3 md:m-0'>
               <h1 className='movie_title'>
                 {!details.title ? details.name : details.title}
               </h1>

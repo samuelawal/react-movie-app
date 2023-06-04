@@ -14,7 +14,7 @@ const MovieCard = ({ movies }) => {
                 className='media_img '
                 width='100%'
               />
-              <p className="md:text-left text-center">{!movie.title ? movie.name : movie.title}</p>
+              <p className="md:text-left text-center text-sm md:text-base">{!movie.title ? movie.name : movie.title}</p>
             </div>
           </Link>
         );
