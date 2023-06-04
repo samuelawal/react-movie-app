@@ -13,9 +13,6 @@ function RootLayout() {
       if (!!query) {
         navigation(`/search?query=${query}`);
       }
-      // if(!query) {
-      //   navigation(-1)
-      // }
     }, 1000);
     return () => clearTimeout(delaySearch);
   }, [query]);

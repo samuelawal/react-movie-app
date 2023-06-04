@@ -4,6 +4,7 @@ import MovieCard from '../components/organisms/MovieCard'
 
 const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => {
   const [query] = useOutletContext()
+  console.log(query)
   useEffect(() => {
     const searchQuery = async () => {
         await handleSearchResults(query)
@@ -18,7 +19,9 @@ const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => 
       ) : (
         <div className='container mx-auto'>
           <h2>Search results found :</h2>
-          <MovieCard movies={searchResults}/>
+          {!searchResults.length ? (
+            <p className='text-center text-red-500'>No result found!</p>
+          ) : <MovieCard movies={searchResults}/>}         
         </div>
       )
      }

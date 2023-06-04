@@ -3,7 +3,7 @@ import { IMG_PATH } from "../../constants";
 import { Link } from "react-router-dom";
 const MovieCard = ({ movies }) => {
   return (
-    <div className='grid grid-cols-3 md:grid-cols-4 gap-4'>
+    <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
     
       {movies.map((movie, idx) => {
         return (
@@ -11,7 +11,7 @@ const MovieCard = ({ movies }) => {
             <div className='h-full w-full  media_element'>
               <img
                 src={IMG_PATH + movie.poster_path}
-                className='media_img object-none object-bottom'
+                className='media_img '
                 width='100%'
               />
               <p className="md:text-left text-center">{!movie.title ? movie.name : movie.title}</p>
