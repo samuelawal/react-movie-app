@@ -3,7 +3,7 @@ import { IMG_PATH } from "../../constants";
 import { Link } from "react-router-dom";
 const MovieCard = ({ movies }) => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+    <div className='grid grid-cols-3 md:grid-cols-4 gap-4'>
     
       {movies.map((movie, idx) => {
         return (
