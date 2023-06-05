@@ -29,11 +29,7 @@ body {
   object-position: bottom;
   cursor: pointer;
 }
-/* @media screen and (max-width: 768px) {
-  .media_element > img{
-    aspect-ratio: 4/3;
-  }
-} */
+
 .myBtn {
   min-block-size: 45px;
   min-inline-size: 120px;
