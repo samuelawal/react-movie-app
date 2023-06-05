@@ -97,9 +97,9 @@ const Modal = ({
               <div className='mt-5 pt-5'>
                 <h3 className='h1'>More Like this</h3>
                 <div className='mt-5'>
-                  {!recommendations ? (
-                    <p className='text-red-200 text-center'>
-                      No recommendations found
+                  {!recommendations.length ? (
+                    <p className='text-red-500 text-sm text-center'>
+                      No recommendations found!!
                     </p>
                   ) : (
                     <MovieCard movies={filteredRecommendations} />

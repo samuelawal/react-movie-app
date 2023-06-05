@@ -4,7 +4,6 @@ import MovieCard from '../components/organisms/MovieCard'
 
 const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => {
   const [query] = useOutletContext()
-  console.log(query)
   useEffect(() => {
     const searchQuery = async () => {
         await handleSearchResults(query)
