@@ -4,11 +4,12 @@ import NavBar from "../components/organisms/NavBar";
 import MovieCard from "../components/organisms/MovieCard";
 
 
+
 const Home = ({ movies, isMoviesLoading,  }) => {
 
   return (
     <div>
-      {/* <NavBar /> */}
+    
       <section className='container mx-auto mt-10'>
         <div className="m-3 md:m-0 md:mb-4">
         <h2>Trending now</h2>

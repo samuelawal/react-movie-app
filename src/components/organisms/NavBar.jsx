@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+export const links = [
+  { title: "Home", path: "/" },
+  { title: "Series", path: "/series" },
+  { title: "Movies", path: "/movies" },
+];
 const NavBar = ({query, onInputChange}) => {
-  const links = [
-    { title: "Home", path: "/" },
-    { title: "Series", path: "/series" },
-    { title: "Movies", path: "/movies" },
-  ];
   return (
     <nav className='container mx-auto p-3'>
       <header className="flex justify-between">
