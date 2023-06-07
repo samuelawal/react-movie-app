@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
 import OverviewPage from "./pages/OverviewPage";
@@ -65,7 +66,9 @@ function App() {
   ]);
   return (
     <>
+    <AnimatePresence initial={false} >
       <RouterProvider router={router} />
+    </AnimatePresence>
     </>
   );
 }

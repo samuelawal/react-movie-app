@@ -1,6 +1,7 @@
 import { IMG_PATH } from "../../constants";
 import { FaPlay } from "react-icons/fa";
 import { getMovieFullYear } from "../../utils";
+import {motion} from "framer-motion"
 import MovieCard from "../organisms/MovieCard";
 const Modal = ({
   isOpen,
@@ -35,10 +36,29 @@ const Modal = ({
   } else {
     ratingColor = "text-green-500 ml-1";
   }
+  const dropIn = {
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        type: "spring",
+        damping: 25,
+      },
+    },
+    exit: {
+      y: "100vh",
+      opacity: 0,
+    },
+  }
   return (
     <>
       {isOpen && !isdetailsLoading && (
-        <div className='fixed inset-0 mt-10 z-20 flex  justify-center'>
+        <motion.div initial="hidden" animate="visible" exit="exit" variants={dropIn} className='fixed inset-0 mt-10 z-20 flex  justify-center'>
           <div
             className='fixed inset-0 bg-black opacity-75'
             onClick={onClose}
@@ -133,7 +153,7 @@ const Modal = ({
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
