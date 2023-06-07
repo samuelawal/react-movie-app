@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link} from "react-router-dom";
 import {FaBars} from 'react-icons/fa'
 
 export const links = [
@@ -18,9 +18,9 @@ const NavBar = ({query, onInputChange, toggleMobileBar}) => {
           <ul className='md:flex hidden items-center'>
             {links.map((link) => (
               <li key={link.path} className="px-5">
-                <Link to={link.path}>
+                <NavLink  to={link.path}>
                   <span>{link.title}</span>
-                </Link>
+                </NavLink >
               </li>
             ))}          
           </ul>
