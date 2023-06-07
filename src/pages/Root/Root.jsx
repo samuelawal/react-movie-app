@@ -7,7 +7,10 @@ function RootLayout() {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
-
+  const [isMobileBarOpen, setIsMobileBarOpen] = useState(false);
+  const toggleMobileBar = () => {
+    setIsMobileBarOpen(!isMobileBarOpen)
+  }
   let navigation = useNavigate();
   useEffect(() => {
     const delaySearch = setTimeout(() => {
@@ -19,8 +22,8 @@ function RootLayout() {
   }, [query]);
   return (
     <>
-      <NavBar query={query} onInputChange={handleInputChange} />
-      <MobileSidebar/>
+      <NavBar query={query} onInputChange={handleInputChange} toggleMobileBar={toggleMobileBar}/>
+      <MobileSidebar isMobileBarOpen={isMobileBarOpen} toggleMobileBar={toggleMobileBar}/>
       <Outlet context={[query, setQuery]} />
     </>
   );
