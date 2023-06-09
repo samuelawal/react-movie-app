@@ -21,12 +21,12 @@ const MobileSidebar = ({isMobileBarOpen, toggleMobileBar}) => {
             animate={{ width: "100%" }}
             transition={{
               ease: "linear",
-              x: { duration: 1 },
+              x: { duration: '1s' },
             }}
-            className='fixed inset-y-0 right-0 flex flex-col bg-gray-900 shadow-lg'
+            className='fixed inset-y-0 right-0 flex flex-col bg-black shadow-lg'
           >
             {/* Sidebar content */}
-            <div className='flex items-center justify-between h-16 px-6 py-4 bg-gray-800'>
+            <div className='flex items-center justify-between h-16 px-6 py-4 bg-gray-950'>
               <span className='text-xl font-semibold text-red-600'>
                 MovieTime
               </span>

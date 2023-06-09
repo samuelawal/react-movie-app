@@ -1,5 +1,6 @@
 import React from "react";
 import {BsArrowDownCircle} from "react-icons/bs"
+import kids_img from "../assets/kids_img.png"
 
 import MovieCard from "../components/organisms/MovieCard";
 
@@ -20,7 +21,15 @@ const Home = () => {
       </div>
     </div>
     <section className="container mx-auto">
-     
+      <div className="flex md:flex-row flex-col justify-between items-center">
+          <div className="order-last md:order-first">
+            <img src={kids_img} alt="kids image" width="100%"/>
+          </div>
+          <div className="w-full md:w-1/2 leading-loose order-2">
+            <h2 className="text-white md:text-left text-center font-extrabold text-4xl md:text-5xl">Watch everywhere</h2>
+            <p className="md:text-xl text-sm mt-3 leading-loose text-center md:text-left">Explore the Latest Releases, Find Your Favorites, and Stay Up-to-Date with the Entertainment World..</p>
+          </div>
+      </div>
     </section>
     </>
   );
