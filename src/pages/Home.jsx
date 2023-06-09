@@ -25,7 +25,7 @@ const Home = () => {
           <div className="order-last md:order-first">
             <img src={kids_img} alt="kids image" width="100%"/>
           </div>
-          <div className="w-full md:w-1/2 leading-loose order-2">
+          <div className="w-full md:w-1/2 leading-loose order-2 p-3">
             <h2 className="text-white md:text-left text-center font-extrabold text-4xl md:text-5xl">Watch everywhere</h2>
             <p className="md:text-xl text-sm mt-3 leading-loose text-center md:text-left">Explore the Latest Releases, Find Your Favorites, and Stay Up-to-Date with the Entertainment World..</p>
           </div>
