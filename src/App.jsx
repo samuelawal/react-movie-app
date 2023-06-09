@@ -32,11 +32,11 @@ function App() {
       {
         path: "",
         index: true,
-        element: <Home {...{ movies, isMoviesLoading }} />,
+        element: <Home  />,
       },
       {
         path: "movies",
-        element: <MoviesPage />,
+        element: <MoviesPage {...{ movies, isMoviesLoading }}/>,
       },
       {
         path: "search",

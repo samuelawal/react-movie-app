@@ -1,25 +1,20 @@
 import React from "react";
-import NavBar from "../components/organisms/NavBar";
+
 
 import MovieCard from "../components/organisms/MovieCard";
 
 
 
-const Home = ({ movies, isMoviesLoading,  }) => {
+const Home = () => {
 
   return (
-    <div>
-    
-      <section className='container mx-auto mt-10'>
-        <div className="m-3 md:m-0 md:mb-4">
-        <h2>Trending now</h2>
-        <p className="text-sm">Get the latest trending movies and tv series at Movie time.</p>
-        </div>
-        <div className="m-3 mb-2 md:m-0">
-        {isMoviesLoading ? "Fetching..." : <MovieCard movies={movies} />}
-        </div>
-      </section>
-    </div>
+    <main className="home_container">
+  <div className="flex justify-center flex-col justify-center items-center h-96 pt-12">
+    <p className="text-small">introducing</p>
+    <h1 className="text-white text-center leading-none  text-4xl md:text-7xl font-extrabold">Movie<span className="text-brand-red">Time</span><br/>Spotlight Picks.</h1>
+    <p className="text-small text-center pt-4 md:pt-6">Immerse Yourself in the Exciting World of Trending Movies and TV Series with MovieTime <br/>cause why not enjoy soft life.</p>
+      </div>
+    </main>
   );
 };
 

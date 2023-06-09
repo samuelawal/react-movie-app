@@ -115,3 +115,8 @@ a.active {
   position: relative;
   top: 10%;
  }
+ .home_container{
+  background-image: url('./assets/hero-banner.gif');
+  height: 100vh;
+  color: var(--primary-color);
+ }
