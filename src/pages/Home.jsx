@@ -36,7 +36,7 @@ const Home = () => {
       <div className="flex md:flex-row flex-col p-4 justify-between items-center p-4 md:p-1">
           <div className="md:w-1/2 w-full leading-loose">
             <h2 className="text-white md:text-left text-center font-extrabold text-4xl md:text-5xl">Unleash your Cinematic Journey</h2>
-            <p className="md:text-xl text-sm mt-3 leading-loose text-center md:text-left">Explore the Latest Releases, Find Your Favorites, and Stay Up-to-Date with the Entertainment World..</p>
+            <p className="md:text-xl text-sm mt-3 leading-loose text-center md:text-left">Discover a Universe of Blockbusters and Hidden Gems and indulge in the Ultimate Movie and TV Experience..</p>
             <button className="myBtn mt-5 md:w-0 w-full">Get Started</button>
           </div>
           <div>
