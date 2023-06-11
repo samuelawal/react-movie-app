@@ -27,10 +27,10 @@ const MobileSidebar = ({isMobileBarOpen, toggleMobileBar}) => {
           >
             {/* Sidebar content */}
             <div className='flex items-center justify-between h-16 px-6 py-4 bg-gray-950'>
-              <span className='text-xl font-semibold text-red-600'>
+              <span className='text-2xl font-semibold text-red-600'>
                 MovieTime
               </span>
-              <FaTimes onClick={toggleMobileBar}/>
+              <FaTimes onClick={toggleMobileBar} size="1.5em"/>
             </div>
             <ul className='flex flex-col items-center flex-grow p-4'>
               {/* Sidebar links */}

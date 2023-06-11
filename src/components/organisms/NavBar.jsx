@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link} from "react-router-dom";
+import { NavLink, Link, redirect} from "react-router-dom";
 import {FaBars, FaSearch} from 'react-icons/fa'
 
 export const links = [
@@ -25,7 +25,9 @@ const NavBar = ({query, onInputChange, toggleMobileBar}) => {
             ))}          
           </ul>
           <div className="md:hidden flex justify-items-end mr-2">
+            <Link to="/search">
           <FaSearch className="mt-2 mr-8" size="1.5em"/>
+            </Link>
           <FaBars className="mt-2" size="1.5em" onClick={toggleMobileBar}/>
           </div>
         <div className="md:flex hidden justify-between items-center">

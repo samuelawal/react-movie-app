@@ -17,6 +17,7 @@ const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => 
         "Loading..."
       ) : (
         <div className='container mx-3 md:mx-auto'>
+          
           <h2 className='text-xl'>Search results found :</h2>
           {!searchResults.length ? (
             <p className='text-center text-red-500 m-5'>No result found!</p>
