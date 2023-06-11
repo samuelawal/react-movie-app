@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link} from "react-router-dom";
-import {FaBars} from 'react-icons/fa'
+import {FaBars, FaSearch} from 'react-icons/fa'
 
 export const links = [
   { title: "Home", path: "/" },
@@ -12,7 +12,7 @@ const NavBar = ({query, onInputChange, toggleMobileBar}) => {
     <nav className='container mx-auto p-3'>
       <header className="flex justify-between">
         <div className="mt-2">
-          <span className="brand_color font-bold">MovieTime</span>
+          <span className="brand_color font-bold text-2xl">MovieTime</span>
         </div>
   
           <ul className='md:flex hidden items-center'>
@@ -25,7 +25,8 @@ const NavBar = ({query, onInputChange, toggleMobileBar}) => {
             ))}          
           </ul>
           <div className="md:hidden flex justify-items-end mr-2">
-          <FaBars className="mt-2" onClick={toggleMobileBar}/>
+          <FaSearch className="mt-2 mr-8" size="1.5em"/>
+          <FaBars className="mt-2" size="1.5em" onClick={toggleMobileBar}/>
           </div>
         <div className="md:flex hidden justify-between items-center">
           <input type="text" value={query} onChange={onInputChange} placeholder="Search..." className="text-small search_input px-3 mx-2 rounded py-1"/>

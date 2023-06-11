@@ -16,10 +16,10 @@ const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => 
       isSearchingResult ? (
         "Loading..."
       ) : (
-        <div className='container mx-auto'>
-          <h2>Search results found :</h2>
+        <div className='container mx-3 md:mx-auto'>
+          <h2 className='text-xl'>Search results found :</h2>
           {!searchResults.length ? (
-            <p className='text-center text-red-500'>No result found!</p>
+            <p className='text-center text-red-500 m-5'>No result found!</p>
           ) : <MovieCard movies={searchResults}/>}         
         </div>
       )
