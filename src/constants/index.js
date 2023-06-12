@@ -1,5 +1,5 @@
 import axios from "axios"
-export const IMG_PATH = "https://image.tmdb.org/t/p/original"
+export const IMG_PATH = "https://image.tmdb.org/t/p/w500"
 export default axios.create({
     baseURL: "https://api.themoviedb.org/3",
     headers: {
