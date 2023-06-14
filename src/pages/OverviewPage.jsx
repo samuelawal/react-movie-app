@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import NavBar from "../components/organisms/NavBar";
 import Modal from "../components/atoms/Modal";
 import { IMG_PATH } from "../constants";
+import Loader from "../components/atoms/Loader";
 
 
 const OverviewPage = ({
@@ -47,7 +48,7 @@ const OverviewPage = ({
 
       </Modal>
       {isdetailsLoading ? (
-        "Loading..."
+       <Loader/>
       ) : (
         <div
           className='w-full h-screen bg-cover bg-no-repeat'

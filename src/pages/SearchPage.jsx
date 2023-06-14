@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useOutletContext } from 'react-router-dom'
 import MovieCard from '../components/organisms/MovieCard'
+import Loader from '../components/atoms/Loader'
 
 // FIXME: Please find a better way of doing this
 
@@ -28,7 +29,7 @@ const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => 
       </div>
      {
       isSearchingResult ? (
-        "Loading..."
+       <Loader/>
       ) : (
         <div className='container mx-3 md:mx-auto mt-4 md:mt-0'>  
           <h2 className='text-xl'>Search results found :</h2>
