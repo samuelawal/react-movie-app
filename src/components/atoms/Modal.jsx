@@ -1,7 +1,7 @@
 import { IMG_PATH } from "../../constants";
 import { FaPlay, FaTimes } from "react-icons/fa";
 import { getMovieFullYear } from "../../utils";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import MovieCard from "../organisms/MovieCard";
 const Modal = ({
   isOpen,
@@ -54,18 +54,22 @@ const Modal = ({
       y: "100vh",
       opacity: 0,
     },
-  }
+  };
   return (
     <>
       {isOpen && !isdetailsLoading && (
-        <motion.div initial="hidden" animate="visible" exit="exit" variants={dropIn} className='fixed inset-0 mt-0  z-20 flex justify-center'>
-
+        <motion.div
+          initial='hidden'
+          animate='visible'
+          exit='exit'
+          variants={dropIn}
+          className='fixed inset-0 mt-0  z-20 flex justify-center'
+        >
           <div
             className='fixed inset-0 bg-black opacity-75'
             onClick={onClose}
           ></div>
           <div className='bg-zinc-900 mt-0 md:mt-10  w-3/3 md:w-2/3 rounded-md shadow-md max-h-screen overflow-y-auto z-50'>
-         
             <div
               className='w-full h-4/6 md:h-5/6 relative'
               style={{
@@ -73,9 +77,9 @@ const Modal = ({
                 backgroundPosition: "50% 30%",
               }}
             >
-              <div className=" p-4 absolute right-0">
-            <FaTimes size="2em" onClick={onClose} />
-          </div>
+              <div className=' p-4 absolute right-0'>
+                <FaTimes size='2em' onClick={onClose} />
+              </div>
               <div className='p-5  more_info_title_contiainer '>
                 <h1 className='more_info_title'>{movie_title}</h1>
                 <div className='mt-5'>

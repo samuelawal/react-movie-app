@@ -31,12 +31,16 @@ const SearchPage = ({handleSearchResults, searchResults, isSearchingResult}) => 
       isSearchingResult ? (
        <Loader/>
       ) : (
-        <div className='container mx-3 md:mx-auto mt-4 md:mt-0'>  
+        <section className='container mx-auto mt-10'>  
+        <div className="m-3 md:m-0 md:mb-4">
           <h2 className='text-xl'>Search results found :</h2>
+        </div>
+          <div className='m-3 mb-2 md:m-0"'>
           {!searchResults.length ? (
             <p className='text-center  m-5'>No result found!</p>
           ) : <MovieCard movies={searchResults}/>}         
-        </div>
+          </div>
+        </section>
       )
      }
     </div>
